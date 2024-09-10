@@ -6,7 +6,11 @@ import { Grid } from "../world/grid";
  */
 export class OrganismView {
   private readonly organism: Organism;
-  constructor(private readonly grid: Grid) {
+  constructor(
+    private readonly grid: Grid,
+    private x: number,
+    private y: number
+  ) {
     this.organism = new Organism();
 
     this.organism.setView(this);

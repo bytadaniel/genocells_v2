@@ -16,9 +16,7 @@ export class Sandbox {
   }
 
   public spawnOrganism(x: number, y: number) {
-    const view = new OrganismView(this.grid);
-
-    this.grid.placeOrganismViewAt(view, x, y);
+    this.grid.addOrganismViewAt(x, y);
   }
 
   private addEnergy(amount: number): void {

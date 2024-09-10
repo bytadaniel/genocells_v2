@@ -1,6 +1,5 @@
-import { Organism } from "../organism/organism";
 import { GridCell } from "./grid-cell";
-import { OrganismView } from "../organism/organism-view";
+import { OrganismViewFactory } from "../organism/organism-view-factory";
 
 export class Grid {
   private readonly matrix: GridCell[][];
@@ -19,9 +18,9 @@ export class Grid {
     }
   }
 
-  public placeOrganismViewAt(organismView: OrganismView, x: number, y: number) {
+  public addOrganismViewAt(x: number, y: number) {
     const cell = this.matrix[y][x];
 
-    cell.placeOrganismView(organismView);
+    cell.setOrganismView(OrganismViewFactory.create(this, x, y));
   }
 }
